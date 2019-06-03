@@ -9,7 +9,7 @@ This repository contains the project for classifying websites in collaboration w
 - pytorch 1.0.1
 - matplotlib 3.0.2
 - seaborn 0.9.0
--jupyterlab 0.35.4
+- jupyterlab 0.35.4
 
 ## How to run
 - Install dependencies
