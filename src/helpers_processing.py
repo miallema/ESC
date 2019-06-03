@@ -5,7 +5,8 @@ pd.options.mode.chained_assignment = None
 
 '''
 Function takes as argument path to json file. It reads the json file. For the content found in result for each
-element, it stocks the arguments, the displaylink, link, snippet and title. The function further merges the title and the snippet, removing the Nan values and splits the arguments into two columns. The function finally
+element, it stocks the arguments, the displaylink, link, snippet and title. The function further merges the title 
+and the snippet, removing the Nan values and splits the arguments into two columns. The function finally
 saves the csv file to the place specified in the constructor.
 '''
 def json_to_csv(path_source, path_sink):
@@ -77,18 +78,25 @@ def labeling(path, i, l='NaN'):
 
 '''
 Function takes labelled unique displayLink dataframe and unlabelled original csv file, merges the label column and
-returns dataframe containing only the link, the snippet, the first argument, the drug and the label. 
+returns dataframe containing only the link, the snippet, the first argument, the drug and the label, 
+whereby duplicates are dropped.
 '''
 def expand_labels(path_labels_unique, path_source, path_sink):
     labels_unique = pd.read_csv(path_labels_unique, index_col= 'displayLink')
     df = pd.read_csv(path_source, index_col='displayLink')
     df['label'] = labels_unique['label']
     df = df[['link', 'text', 'first', 'drug', 'label']]
+    df = df.drop_duplicates()
     df.to_csv(path_sink)
     
     
 '''
-After having predicted the label for each link, this function groups by the display link and counts the occurrences. It further counts the label and creates a column called ratio, which contains the ratio between the sum of the labels and the occurences. The index of the dataframe is set to the display link, then the dataframe is sorted by the ratio and by the label count. This way at the top of the dataframe are those display links, which occured often and which were labelled always as 1. At the bottom of the dataframe are those display links, which owere never labelled as an illegal webshop.
+After having predicted the label for each link, this function groups by the display link and counts the occurrences. 
+It further counts the label and creates a column called ratio, which contains the ratio between the sum of the labels 
+and the occurences. The index of the dataframe is set to the display link, then the dataframe is sorted by the ratio 
+and by the label count. This way at the top of the dataframe are those display links, which occured often and which 
+were labelled always as 1. At the bottom of the dataframe are those display links, which owere never labelled as 
+an illegal webshop.
 '''
 def unique_display_link_prediction(path_source, path_sink):
     df = pd.read_csv(path_source)
