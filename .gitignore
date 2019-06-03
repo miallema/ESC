@@ -2,8 +2,13 @@
 __pycache__/
 *.py[cod]
 *$py.class
-*.csv
-*.csv.zip
+/data/drug_websites_filtered.csv
+/data/labelled_expanded.csv
+/data/labelled_prediction_expanded.csv
+/data/data_processed.csv
+/data/labelled_prediction_unique.csv
+/unique_displayLink.csv
+
 # C extensions
 *.json
 *.so

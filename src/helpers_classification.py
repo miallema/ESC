@@ -16,7 +16,8 @@ def data_preparation(path):
     df = pd.read_csv(path, index_col='link')
     unlabelled_data = df[df['label'].isnull()]
     labelled_data = df[(df['label'] == 1) | (df['label'] == 0)]
-    labelled_data = labelled_data[:-638]
+    labelled_data = labelled_data[:-586]
+    #labelled_data = labelled_data.groupby('label').apply(lambda s: s.sample(len(df[(df['label'] == 1)])-106))
     train_data, test_data = train_test_split(labelled_data, test_size=0.2)
     x_train = train_data.text
     y_train = Tensor(train_data.label.values).type(torch.LongTensor)
