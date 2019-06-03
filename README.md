@@ -1,5 +1,24 @@
-# ESC
-This repository contains the project for classifying websites in collaboration with ESC. It is an optional semester project in Data Science COM-508.
+# Website Classification for the Ecole des sciences criminelles, UNIL
 
-The repository contains a slideshow, which describes the data pipeline, a folder containing figures, a folder containing the model and the source folder containing code. The source folder contains a jupyter notebook, which englobes the data pipeline. The helper functions are collected in two different files. The first related to data processing and the second to data modelling. The data is too large for github. 
+This repository contains the project for classifying websites in collaboration with the ESC. It is an optional semester project in Data Science COM-508.
+
+## Dependencies
+- pandas 0.24.1
+- scikit-learn 0.20.2
+- numpy 1.15.4
+- pytorch 1.0.1
+- matplotlib 3.0.2
+- seaborn 0.9.0
+-jupyterlab 0.35.4
+
+## How to run
+- Install dependencies
+- put original google.json file in folder /data/
+- Open and run /src/webshop_classification.ipynb
+- /data/labelled_unique.csv can be replaced with other labelled data
+
+## Possible further work
+- There are roughly 650 display names labelled with 1. These could further be investigated by hand
+- The resulting adapted dataset could then be used to retrain the multilayer perceptron
+- In a next step the actual html code of the websites could be analyzed instead of just the snippet
 
