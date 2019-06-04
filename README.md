@@ -3,7 +3,7 @@
 This repository contains the project for classifying websites in collaboration with the ESC. It is an optional semester project in Data Science COM-508.
 
 ## Result
-The analysis resulted in 652 suspected illicit websites. The csv file containing the domain links of these websites can be found under /data/suspects.csv
+The analysis resulted in 652 suspected illicit websites. The csv file containing the domain links of these websites can be found under /data/suspects.csv.
 
 ## Dependencies
 - pandas 0.24.1
