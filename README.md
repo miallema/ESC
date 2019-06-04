@@ -2,6 +2,9 @@
 
 This repository contains the project for classifying websites in collaboration with the ESC. It is an optional semester project in Data Science COM-508.
 
+## Google tutorial
+https://developers.google.com/machine-learning/guides/text-classification/
+
 ## Result
 The analysis resulted in 652 suspected illicit websites. The csv file containing the domain links of these websites can be found under /data/suspected.csv.
 
