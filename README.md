@@ -1,4 +1,4 @@
-# Website Classification for the Ecole des sciences criminelles, UNIL
+# Website Classification for identifying illicit markets
 
 This repository contains the project for classifying websites in collaboration with the ESC. It is an optional semester project in Data Science COM-508.
 
